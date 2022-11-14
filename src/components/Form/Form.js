@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useRef} from 'react';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Form = (props) => {
@@ -31,7 +30,6 @@ const Form = (props) => {
     <div>
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='add a to-do' value={input} name="text" onChange={handleChange} ref={inputRef}></input>
-            {/* <Button size="sm" variant="outline-success">Add To-Do</Button> */}
             <button>Add To-Do</button>
         </form>
     </div>
