@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
+import ReactCalendar from '../ReactCalendar/ReactCalendar';
+import './List.scss';
 
 const List = () => {
 
@@ -42,7 +44,8 @@ const List = () => {
     console.log(todos)
 
   return (
-    <div>
+    <div className='list'>
+        <ReactCalendar />
         <h1>What's the plan for Today?</h1>
         <Form onSubmit={addTodo}/>
         <Todo 
