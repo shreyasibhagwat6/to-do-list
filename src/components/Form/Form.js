@@ -31,7 +31,8 @@ const Form = (props) => {
     <div>
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='add a to-do' value={input} name="text" onChange={handleChange} ref={inputRef}></input>
-            <Button size="sm" variant="outline-success">Add To-Do</Button>
+            {/* <Button size="sm" variant="outline-success">Add To-Do</Button> */}
+            <button>Add To-Do</button>
         </form>
     </div>
   )

@@ -4,7 +4,7 @@ import Todo from '../Todo/Todo';
 
 const List = () => {
 
-    const [todos, setTodos] = useState('');
+    const [todos, setTodos] = useState([]);
 
     const addTodo = (todo) => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
@@ -38,6 +38,8 @@ const List = () => {
         })
         setTodos(updatedTodos);
     }
+
+    console.log(todos)
 
   return (
     <div>
