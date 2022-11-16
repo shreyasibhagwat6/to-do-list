@@ -1,3 +1,15 @@
 .list {
+  height: 200rem;
   background-color: aqua;
+}
+.list__header {
+  padding: 1rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.list__title {
+  padding: 0 0 1rem;
+}
+.list__day {
+  padding: 0 0 1rem;
 }/*# sourceMappingURL=List.css.map */

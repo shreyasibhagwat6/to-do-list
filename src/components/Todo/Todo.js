@@ -8,8 +8,6 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
     console.log(todos)
 
-    console.log(typeof todos)
-
     const [edit, setEdit] = useState({
         id: null,
         value: ''
@@ -30,7 +28,6 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     for (const key in todos) {
         console.log(`${key}: ${todos[key]}`)
     }
-
 
   return (
     <div>

@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
 import ReactCalendar from '../ReactCalendar/ReactCalendar';
 import './List.scss';
 
+
 const List = () => {
 
-    const [todos, setTodos] = useState([]);
+    const getLocalItems = () => {
+        let todo = localStorage.getItem('todo');
+    
+        if (todo) {
+            return JSON.parse(localStorage.getItem('todo'));
+        } else {
+            return [];
+        }
+    }
+
+    const [todos, setTodos] = useState(getLocalItems());
 
     const addTodo = (todo) => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
@@ -43,10 +54,24 @@ const List = () => {
 
     console.log(todos)
 
+    const [date, setDate] = useState(new Date());
+
+    const onChange = date => {
+    setDate(date)
+    }
+
+    console.log(date.toString())
+
+    useEffect(()=>{
+        localStorage.setItem('todo', JSON.stringify(todos))
+    }, [todos]);
+
   return (
     <div className='list'>
-        <ReactCalendar />
-        <h1>What's the plan for Today?</h1>
+        <p className='list__header'>TO-DO LIST</p>
+        <ReactCalendar date={date} onChange={onChange} />
+        <h1 className='list__title'>What's the plan for Today?</h1>
+        <div className='list__day'>{date.toString()}</div>
         <Form onSubmit={addTodo}/>
         <Todo 
         todos={todos}
