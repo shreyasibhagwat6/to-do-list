@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { Link } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import './ReactCalendar.scss';
 
 const ReactCalendar = ({ date, onChange}) => {
 
   return (
     <div>
-      <Calendar onChange={onChange} value={date}/>
+        <Calendar className='calendar' onChange={onChange} value={date}/>
     </div>
   )
 }

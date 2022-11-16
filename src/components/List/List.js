@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Link } from 'react';
 import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
 import ReactCalendar from '../ReactCalendar/ReactCalendar';
@@ -60,15 +60,18 @@ const List = () => {
     setDate(date)
     }
 
+    console.log(date.toString())
+
     useEffect(()=>{
         localStorage.setItem('todo', JSON.stringify(todos))
     }, [todos]);
 
   return (
     <div className='list'>
+        <p className='list__header'>TO-DO LIST</p>
         <ReactCalendar date={date} onChange={onChange} />
-        <h1>What's the plan for Today?</h1>
-        <div>{date.toString()}</div>
+        <h1 className='list__title'>What's the plan for Today?</h1>
+        <div className='list__day'>{date.toString()}</div>
         <Form onSubmit={addTodo}/>
         <Todo 
         todos={todos}

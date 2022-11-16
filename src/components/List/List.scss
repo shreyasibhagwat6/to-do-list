@@ -1,4 +1,18 @@
 .list{
     height: 200rem;
     background-color: aqua;
+
+    &__header{
+        padding: 1rem 0 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    &__title {
+        padding: 0 0 1rem;
+    }
+
+    &__day {
+        padding: 0 0 1rem;
+    }
 }
