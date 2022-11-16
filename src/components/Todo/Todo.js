@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from '../Form/Form';
 import './Todo.scss';
 import { RiCloseCircleLine } from 'react-icons/ri';
@@ -7,8 +7,6 @@ import { TiEdit } from 'react-icons/ti';
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
     console.log(todos)
-
-    console.log(typeof todos)
 
     const [edit, setEdit] = useState({
         id: null,
@@ -30,7 +28,6 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     for (const key in todos) {
         console.log(`${key}: ${todos[key]}`)
     }
-
 
   return (
     <div>

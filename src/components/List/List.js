@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
 import ReactCalendar from '../ReactCalendar/ReactCalendar';
 import './List.scss';
 
+
 const List = () => {
 
-    const [todos, setTodos] = useState([]);
+    const getLocalItems = () => {
+        let todo = localStorage.getItem('todo');
+    
+        if (todo) {
+            return JSON.parse(localStorage.getItem('todo'));
+        } else {
+            return [];
+        }
+    }
+
+    const [todos, setTodos] = useState(getLocalItems());
 
     const addTodo = (todo) => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
@@ -48,6 +59,10 @@ const List = () => {
     const onChange = date => {
     setDate(date)
     }
+
+    useEffect(()=>{
+        localStorage.setItem('todo', JSON.stringify(todos))
+    }, [todos]);
 
   return (
     <div className='list'>
