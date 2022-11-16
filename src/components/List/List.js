@@ -43,10 +43,17 @@ const List = () => {
 
     console.log(todos)
 
+    const [date, setDate] = useState(new Date());
+
+    const onChange = date => {
+    setDate(date)
+    }
+
   return (
     <div className='list'>
-        <ReactCalendar />
+        <ReactCalendar date={date} onChange={onChange} />
         <h1>What's the plan for Today?</h1>
+        <div>{date.toString()}</div>
         <Form onSubmit={addTodo}/>
         <Todo 
         todos={todos}
