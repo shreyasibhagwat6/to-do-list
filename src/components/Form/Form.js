@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Form.scss';
 
 const Form = (props) => {
 
@@ -28,9 +29,9 @@ const Form = (props) => {
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='add a to-do' value={input} name="text" onChange={handleChange} ref={inputRef}></input>
-            <button>Add To-Do</button>
+        <form className='form' onSubmit={handleSubmit}>
+            <input className='form__text' type='text' placeholder='add a to-do' value={input} name="text" onChange={handleChange} ref={inputRef}></input>
+            <button className='form__button'>Add To-Do</button>
         </form>
     </div>
   )

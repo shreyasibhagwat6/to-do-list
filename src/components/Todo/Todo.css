@@ -1,6 +1,8 @@
 .todo-row {
-  background-color: black;
-  color: white;
+  background-color: #463D35;
+  color: #F6F4F3;
   padding: 0.5rem;
-  margin: 1rem 4rem;
+  margin: 1.5rem auto;
+  width: 50%;
+  border-radius: 10px;
 }/*# sourceMappingURL=Todo.css.map */
